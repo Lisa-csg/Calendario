@@ -60,6 +60,11 @@ function aggiornaUI() {
   carica(currentDate, 'Galline', checked => {
     document.getElementById('btnGalline').classList.toggle('checked', checked);
   });
+
+  carica(currentDate, 'Orto', checked => {
+    const el = document.getElementById('btnOrto');
+    if (el) el.classList.toggle('checked', checked);
+  });
 }
 
 document.getElementById('btnGatti').addEventListener('click', e => {
@@ -75,6 +80,16 @@ document.getElementById('btnGalline').addEventListener('click', e => {
   salva(currentDate, 'Galline', nuovoStato);
   btn.classList.toggle('checked', nuovoStato);
 });
+
+const btnOrtoEl = document.getElementById('btnOrto');
+if (btnOrtoEl) {
+  btnOrtoEl.addEventListener('click', e => {
+    const btn = e.currentTarget;
+    const nuovoStato = !btn.classList.contains('checked');
+    salva(currentDate, 'Orto', nuovoStato);
+    btn.classList.toggle('checked', nuovoStato);
+  });
+}
 
 document.getElementById('btnPrev').addEventListener('click', () => {
   currentDate.setDate(currentDate.getDate() - 1);

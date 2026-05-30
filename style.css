@@ -103,6 +103,17 @@ body {
   transform: scale(1.02);
 }
 
+.btn-orto {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.btn-orto.checked {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+  color: white;
+  transform: scale(1.02);
+}
+
 .btn:active {
   transform: scale(0.98);
 }
